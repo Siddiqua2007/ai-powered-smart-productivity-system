@@ -15,8 +15,13 @@ const port = process.env.PORT || 8080;
 connectDB();
 
 app.use(cors({
-  origin: true,
-  credentials: true
+  origin: [
+    'https://vercel.app',
+    'https://vercel.app'
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 
