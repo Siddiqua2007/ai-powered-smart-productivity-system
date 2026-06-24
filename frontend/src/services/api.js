@@ -1,12 +1,10 @@
 import axios from 'axios';
 
-// Dynamically use the Vercel environment variable, fallback to local development
+// Vite strictly reads environment variables through import.meta.env
 const API = axios.create({
-    baseURL: (typeof process !== 'undefined' && process.env?.REACT_APP_API_URL) || 
-             (typeof import.meta !== 'undefined' && import.meta.env?.VITE_API_URL) || 
-             'http://localhost:8080',
+    baseURL: (typeof import.meta !== 'undefined' && import.meta.env?.VITE_API_URL) || 
+             'http://localhost:8080/api',
 });
-
 
 API.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
