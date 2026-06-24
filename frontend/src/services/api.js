@@ -1,9 +1,8 @@
 import axios from 'axios';
 
-// Vite strictly reads environment variables through import.meta.env
 const API = axios.create({
     baseURL: (typeof import.meta !== 'undefined' && import.meta.env?.VITE_API_URL) || 
-             'http://localhost:8080/api',
+             'https://onrender.com',
 });
 
 API.interceptors.request.use((config) => {
