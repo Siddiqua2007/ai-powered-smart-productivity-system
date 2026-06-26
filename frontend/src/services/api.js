@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://ai-powered-smart-productivity-system.onrender.com',
+  baseURL: 'https://ai-powered-smart-productivity-system.onrender.com/api',
 });
 
 API.interceptors.request.use((config) => {
